@@ -1,4 +1,4 @@
-package com.example.huellitaspelitos
+package co.edu.udistrital.espingsw.huellitaspelitos
 
 import androidx.lifecycle.ViewModel
 
