@@ -1,6 +1,5 @@
 package co.edu.udistrital.espingsw.huellitaspelitos.ui.login
 
-import android.app.Activity
 import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -13,16 +12,21 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.Toast
-import androidx.navigation.findNavController
-import co.edu.udistrital.espingsw.huellitaspelitos.MainActivity
+import co.edu.udistrital.espingsw.huellitaspelitos.ui.main.MainActivity
 import co.edu.udistrital.espingsw.huellitaspelitos.databinding.ActivityLogin2Binding
 
 import co.edu.udistrital.espingsw.huellitaspelitos.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLogin2Binding
+
+    companion object {
+        const val LOGGED_IN_USER = "LOGGED_IN_USER"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +39,7 @@ class LoginActivity : AppCompatActivity() {
         val login = binding.login
         val loading = binding.loading
 
-        loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
-            .get(LoginViewModel::class.java)
+        loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
 
         loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
@@ -99,14 +102,17 @@ class LoginActivity : AppCompatActivity() {
 
     private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome)
-        val displayName = model.displayName
+        val displayName = model.login
         Toast.makeText(
             applicationContext,
             "$welcome $displayName",
             Toast.LENGTH_LONG
         ).show()
 
-        startActivity(Intent(applicationContext, MainActivity::class.java))
+        startActivity(Intent(applicationContext, MainActivity::class.java).apply {
+            putExtra(LOGGED_IN_USER, model)
+        })
+        finish()
     }
 
     private fun showLoginFailed(@StringRes errorString: Int) {

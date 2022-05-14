@@ -5,13 +5,22 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import android.util.Patterns
 import androidx.lifecycle.viewModelScope
-import co.edu.udistrital.espingsw.huellitaspelitos.data.LoginRepository
-import co.edu.udistrital.espingsw.huellitaspelitos.data.Result
+import co.edu.udistrital.espingsw.huellitaspelitos.data.repository.LoginRepository
+import co.edu.udistrital.espingsw.huellitaspelitos.data.util.Result
 
 import co.edu.udistrital.espingsw.huellitaspelitos.R
+import co.edu.udistrital.espingsw.huellitaspelitos.data.repository.SetUserIdRepository
+import co.edu.udistrital.espingsw.huellitaspelitos.data.usecase.SetUserIdUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel() {
+@HiltViewModel
+class LoginViewModel @Inject constructor(
+    private val loginRepository: LoginRepository,
+    private val setUserIdUseCase: SetUserIdUseCase
+) :
+    ViewModel() {
 
     private val _loginForm = MutableLiveData<LoginFormState>()
     val loginFormState: LiveData<LoginFormState> = _loginForm
@@ -20,13 +29,21 @@ class LoginViewModel(private val loginRepository: LoginRepository) : ViewModel()
     val loginResult: LiveData<LoginResult> = _loginResult
 
     fun login(username: String, password: String) {
-        // can be launched in a separate asynchronous job
         viewModelScope.launch {
             val result = loginRepository.login(username, password)
 
             if (result is Result.Success) {
+                val user = result.data
+
+                user.id?.let { setUserIdUseCase(it) }
+
                 _loginResult.value =
-                    LoginResult(success = LoggedInUserView(displayName = result.data.displayName))
+                    LoginResult(
+                        success = LoggedInUserView(
+                            user.id, user.login, user.email,
+                            user.phone, user.address
+                        )
+                    )
             } else {
                 _loginResult.value = LoginResult(error = R.string.login_failed)
             }

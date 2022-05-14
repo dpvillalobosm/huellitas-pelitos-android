@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "647668831151",
+    "project_id": "pgs-mobile-cebb6",
+    "storage_bucket": "pgs-mobile-cebb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647668831151:android:d70b7bec7b86dd7846955a",
+        "android_client_info": {
+          "package_name": "co.edu.udistrital.espingsw.huellitaspelitos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647668831151-9btcr8okciembbdhto9rf0lma6rqfais.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.udistrital.espingsw.huellitaspelitos",
+            "certificate_hash": "4d77a18f66db81669379047172bc0e1357b2a44c"
+          }
+        },
+        {
+          "client_id": "647668831151-pf19bjtc88e9d7npg3ltobpr025ch0nu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9s7gy0IVI-NW5c_ccYYpPM_sqtKQG3KA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647668831151-pf19bjtc88e9d7npg3ltobpr025ch0nu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

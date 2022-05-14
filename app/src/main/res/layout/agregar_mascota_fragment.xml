@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AgregarMascotaFragment">
+    tools:context=".ui.pending.AgregarMascotaFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/pet_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -52,7 +52,7 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/pet_birthdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -73,7 +73,7 @@
             tools:ignore="MissingConstraints" />
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/pet_is_sterilized"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
@@ -94,7 +94,7 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextNumberDecimal"
+            android:id="@+id/pet_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -105,7 +105,7 @@
             tools:ignore="MissingConstraints" />
 
         <Switch
-            android:id="@+id/switch2"
+            android:id="@+id/pet_is_vaccined"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
@@ -116,7 +116,7 @@
             tools:ignore="MissingConstraints" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName7"
+            android:id="@+id/pet_additional_observations"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -128,7 +128,7 @@
             tools:ignore="MissingConstraints" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/pet_is_male"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Macho"
@@ -137,7 +137,7 @@
             tools:ignore="MissingConstraints" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/pet_is_female"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hembra"
@@ -166,7 +166,7 @@
             tools:ignore="MissingConstraints" />
 
         <ImageView
-            android:id="@+id/imageView8"
+            android:id="@+id/pet_photo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="259dp"
