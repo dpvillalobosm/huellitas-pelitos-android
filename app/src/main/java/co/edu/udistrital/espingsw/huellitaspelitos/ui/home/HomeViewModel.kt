@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import co.edu.udistrital.espingsw.huellitaspelitos.data.repository.PetRepository
 import co.edu.udistrital.espingsw.huellitaspelitos.data.restapi.dto.PetDto
 import co.edu.udistrital.espingsw.huellitaspelitos.data.usecase.GetUserIdUseCase
-import co.edu.udistrital.espingsw.huellitaspelitos.data.util.Result
+import co.edu.udistrital.espingsw.huellitaspelitos.data.util.ApiCallResult
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -27,7 +27,7 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             val result = _userId.value?.let { petRepository.getPetsByUser(it) }
 
-            if(result is Result.Success){
+            if(result is ApiCallResult.Success){
                 val listOfPetsForUser = result.data
                 value = listOfPetsForUser
             }
@@ -44,7 +44,7 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             val result = petRepository.getPetsByUser(idUser)
 
-            if(result is Result.Success){
+            if(result is ApiCallResult.Success){
                 val listOfPetsForUser = result.data
                 _pets.postValue(listOfPetsForUser)
             }

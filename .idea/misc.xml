@@ -22,29 +22,59 @@
         <entry key="app/src/main/res/drawable-v21/ic_menu_camera.xml" value="0.3135" />
         <entry key="app/src/main/res/drawable/baseline_home_20.xml" value="0.3135" />
         <entry key="app/src/main/res/drawable/baseline_home_24.xml" value="0.3135" />
+        <entry key="app/src/main/res/drawable/email.xml" value="0.182" />
+        <entry key="app/src/main/res/drawable/facebook.xml" value="0.3235" />
+        <entry key="app/src/main/res/drawable/instagram.xml" value="0.3235" />
+        <entry key="app/src/main/res/drawable/map_marker.xml" value="0.3235" />
+        <entry key="app/src/main/res/drawable/office_building.xml" value="0.182" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.3135" />
+        <entry key="app/src/main/res/drawable/whatsapp.xml" value="0.3235" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login2.xml" value="0.21084337349397592" />
         <entry key="app/src/main/res/layout-w936dp/activity_login2.xml" value="0.24609375" />
         <entry key="app/src/main/res/layout/activity_agendar_cita.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/activity_continue_service_for_pet.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/activity_continue_services.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/activity_end_services.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/activity_end_services_estheticist.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_login2.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5132192846034215" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3380710659898477" />
         <entry key="app/src/main/res/layout/activity_notificacion.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/activity_principal_cliente.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/activity_servicios.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/activity_start_estheticist.xml" value="0.30997304582210244" />
+        <entry key="app/src/main/res/layout/activity_start_services.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/activity_user_registry.xml" value="0.2926208651399491" />
+        <entry key="app/src/main/res/layout/activity_visit_created_by_pet_owner.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/agregar_mascota_fragment.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.328125" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.328125" />
+        <entry key="app/src/main/res/layout/content_start_estheticist.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/fragment_about_us.xml" value="0.11486719558468438" />
+        <entry key="app/src/main/res/layout/fragment_add_pet.xml" value="0.2644927536231884" />
+        <entry key="app/src/main/res/layout/fragment_confirm_delete_pet.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_contact_us.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.328125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.328125" />
+        <entry key="app/src/main/res/layout/fragment_logout.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_notification_options.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_pet.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_pet_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_petforservices.xml" value="0.34375" />
+        <entry key="app/src/main/res/layout/fragment_petforservices_list.xml" value="0.3296875" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fragment_services.xml" value="0.34375" />
         <entry key="app/src/main/res/layout/fragment_services_list.xml" value="0.3296875" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.328125" />
+        <entry key="app/src/main/res/layout/fragment_visit_created.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/item.xml" value="0.178125" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/perfil_cliente_fragment.xml" value="0.34375" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.34375" />
         <entry key="app/src/main/res/menu/main.xml" value="0.34375" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3235" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3135" />
       </map>
     </option>

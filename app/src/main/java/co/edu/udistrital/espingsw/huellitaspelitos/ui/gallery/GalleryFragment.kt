@@ -8,7 +8,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import co.edu.udistrital.espingsw.huellitaspelitos.databinding.FragmentGalleryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GalleryFragment : Fragment() {
 
     private var _binding: FragmentGalleryBinding? = null
@@ -28,10 +30,18 @@ class GalleryFragment : Fragment() {
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textGallery
-        galleryViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val user = galleryViewModel.getLoggedInUser()
+
+        val emailTextView = binding.notificationEmail
+        val addressTextView = binding.notificationAddress
+        val phoneTextView = binding.notificationPhone
+
+        if (user != null) {
+            emailTextView.setText(user.email, TextView.BufferType.EDITABLE)
+            addressTextView.setText(user.address, TextView.BufferType.EDITABLE)
+            phoneTextView.setText(user.phone.toString(), TextView.BufferType.EDITABLE)
         }
+
         return root
     }
 

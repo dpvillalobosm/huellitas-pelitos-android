@@ -16,13 +16,18 @@ import co.edu.udistrital.espingsw.huellitaspelitos.ui.main.MainActivity
 import co.edu.udistrital.espingsw.huellitaspelitos.databinding.ActivityLogin2Binding
 
 import co.edu.udistrital.espingsw.huellitaspelitos.R
+import co.edu.udistrital.espingsw.huellitaspelitos.data.service.RegisterForPushNotificationsAsync
+import co.edu.udistrital.espingsw.huellitaspelitos.data.util.Constants
+import co.edu.udistrital.espingsw.huellitaspelitos.ui.userregistry.UserRegistryActivity
 import dagger.hilt.android.AndroidEntryPoint
+import me.pushy.sdk.Pushy
 
 @AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLogin2Binding
+    private var pushyToken: String = ""
 
     companion object {
         const val LOGGED_IN_USER = "LOGGED_IN_USER"
@@ -31,6 +36,14 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
+
+        Pushy.listen(this)
+
+        if (!Pushy.isRegistered(this)) {
+            RegisterForPushNotificationsAsync(this, loginViewModel).execute()
+        }
+
         binding = ActivityLogin2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -38,8 +51,7 @@ class LoginActivity : AppCompatActivity() {
         val password = binding.password
         val login = binding.login
         val loading = binding.loading
-
-        loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
+        val newUser = binding.signIn
 
         loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
@@ -97,7 +109,20 @@ class LoginActivity : AppCompatActivity() {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }
+
+
         }
+
+        newUser?.setOnClickListener {
+            registerNewUser()
+        }
+    }
+
+    private fun registerNewUser() {
+        startActivity(Intent(applicationContext, UserRegistryActivity::class.java).apply {
+            putExtra(Constants.PUSHY_TOKEN, pushyToken)
+        })
+        finish()
     }
 
     private fun updateUiWithUser(model: LoggedInUserView) {

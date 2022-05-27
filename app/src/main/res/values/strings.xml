@@ -1,15 +1,17 @@
 <resources>
     <string name="app_name">Huellitas y Pelitos</string>
-    <string name="title_activity_login">Inicio de sesión</string>
+    <string name="title_activity_login">Huellitas y Pelitos</string>
     <string name="prompt_email">Correo electrónico</string>
+    <string name="prompt_login">Usuario</string>
     <string name="prompt_password">Contraseña</string>
     <string name="action_sign_in">Iniciar sesión</string>
     <string name="action_sign_in_short">Inicia sesión</string>
     <string name="welcome">"Bienvenid@ !"</string>
     <string name="invalid_username">No es un nombre de usuario valido</string>
-    <string name="invalid_password">La contrseña debe ser >5 a caracteres</string>
+    <string name="invalid_password">La contraseña debe ser >5 a caracteres</string>
     <string name="login_failed">"Inicio de sesión fallido"</string>
     <string name="mail">Mail</string>
+    <string name="create_pet">Crear mascota</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -21,11 +23,87 @@
     <string name="sign_in">Registrate aquí</string>
 
     <string name="menu_home">Inicio</string>
+    <string name="menu_aboutUs">Acerca de nosotros</string>
     <string name="menu_profile">Perfil</string>
     <string name="menu_pets">Mascotas</string>
     <string name="menu_services">Servicios</string>
+    <string name="menu_contactUs">Contactanos</string>
     <string name="menu_logout">Cerrar Sesión</string>
 
     <string name="your_pets">Tus Mascotas</string>
+    <string name="edit">Editar</string>
     <string name="mascota">Mascota</string>
+    <string name="notifications_title">Opciones para notificacion</string>
+    <string name="email">Correo</string>
+    <string name="email_placeholder">Ingresa tú correo electrónico</string>
+    <string name="address">Dirección</string>
+    <string name="phone">Teléfono</string>
+    <string name="update">Actualizar</string>
+    <string name="continue_to_next">Continuar</string>
+    <string name="update_in_profile">Actualizar en perfil</string>
+    <string name="address_placeholder">Ingresa tú dirección</string>
+    <string name="phone_placeholder">Ingresa tú número de teléfono</string>
+    <string name="pet_name_label">Nombre Mascota:</string>
+    <string name="pet_name_hint">Ingresa el nombre de tú mascota</string>
+    <string name="pet_birthdate_label">Fecha Nacimiento:</string>
+    <string name="pet_gender_label">Genero:</string>
+    <string name="pet_gender_male_label">Macho</string>
+    <string name="pet_gender_female_label">Hembra</string>
+    <string name="pet_sterilized_label">Esterilizado</string>
+    <string name="pet_weight_label">Peso (Kg):</string>
+    <string name="pet_weight_hint">Ingresa el peso de tú mascota</string>
+    <string name="pet_vaccines_label">Vacunado</string>
+    <string name="pet_observations_label">Observaciones:</string>
+    <string name="pet_observations_hint">Ingresa las observaciones de tú mascota</string>
+    <string name="pet_estheticist_observations_hint">Ingresa las observaciones de la mascota</string>
+    <string name="pet_photo_label">Foto:</string>
+    <string name="pet_estheticist_photo_label">Foto de la llegada de la mascota:</string>
+    <string name="pet_estheticist_photo_continue_label">Foto de la mascota al empezar con los servicios: </string>
+    <string name="pet_estheticist_photo_finish_label">Foto de la mascota al terminar con los servicios: </string>
+    <string name="pet_photo_cd_label">Foto actual de la mascota</string>
+    <string name="pet_save_changes_label">Guardar Cambios</string>
+    <string name="pet_estheticist_save_changes_label">Recibir Mascota</string>
+    <string name="pet_estheticist_continue_services">Iniciar servicios</string>
+    <string name="pet_estheticist_end_services">Terminar servicios</string>
+    <string name="pet_delete_pet_label">Eliminar Mascota</string>
+    <string name="delete">Eliminar</string>
+    <string name="wish_to_delete">¿Deseas eliminar a esta mascota?</string>
+
+    <string name="user_register_name">Nombre:</string>
+    <string name="user_register_name_placeholder">Ingresa aquí tú nombre</string>
+    <string name="user_register_document">Documento:</string>
+    <string name="user_register_document_placeholder">Ingresa aquí tú número de documento</string>
+    <string name="user_document_type_placeholder">Tipo de documento</string>
+
+    <string name="user_register_login">Usuario: </string>
+    <string name="user_register_login_placeholder">Ingresa aquí tú usuario</string>
+    <string name="user_register_password">Contraseña:</string>
+    <string name="user_register_password_placeholder">Ingresa aquí tú contraseña</string>
+    <string name="user_register_email">E-mail:</string>
+    <string name="user_register_email_placeholder">Ingresa aquí tú e-mail</string>
+    <string name="user_register_phone">Teléfono:</string>
+    <string name="user_register_phone_placeholder">Ingresa aquí tú número de teléfono</string>
+    <string name="user_register_address">Dirección:</string>
+    <string name="user_register_address_placeholder">Ingresa aquí tú dirección</string>
+    <string name="user_registry">Regístrate</string>
+
+    <string name="visit_created">La visita de tú mascota a la estética veterinaria ha sido creada exitosamente.\nPor favor dirígete a la estética veterinaria para empezar con los servicios</string>
+    <string name="visit_created_label">Visita Creada</string>
+    <string name="visit_confirmation_code">Código de confirmación: </string>
+    <string name="visit_confirmed_part1">La visita de tú mascota a la estética veterinaria ha sido confirmada exitosamente por el esteticista.\nAsí estaba tú mascota al momento de la confirmación de la visita:</string>
+    <string name="visit_confirmed_part2">Ahora espera a que el esteticista te avise la continuación de los servicios o la finalización para que te dirijas a la estética veterinaria a recoger a tú mascota.</string>
+    <string name="visit_continue">El estéticista ha empezado con los servicios a tu mascota.\nAquí una foto de tu mascota antes de empezar, para que la extrañes menos ;)</string>
+    <string name="visit_please_wait">Por favor mantente al tanto de tú teléfono. Pronto el esteticista te llamará y aquí te avisaremos para que recojas a tú mascota.</string>
+    <string name="visit_ended">El esteticista ha terminado con los servicios a tú mascota. Así ha quedado: </string>
+    <string name="visit_ended_advice">Por favor dirígete a la estética veterinaria para recoger a tú mascota y realizar el pago de los servicios.\n¡Muchas gracias por escoger nuestros servicios, esperamos sea de agrado y que vuelvas a visitarnos!</string>
+
+    <string name="visit_estheticist_start">En cuanto tengas a la mascota lista para ser recibida por favor diligencia los siguientes datos: </string>
+    <string name="visit_estheticist_continue">En cuanto tengas a la mascota lista para empezar con los servicios por favor diligencia los siguientes datos: </string>
+    <string name="visit_estheticist_finish">En cuanto tengas a la mascota lista para entregar al dueño por favor diligencia los siguientes datos: </string>
+
+    <string name="visit_estheticist_created">El dueño: \"%1$s\", de la mascota: \"%2$s\", ha creado una visita.\nPor favor inicia los servicios cuando el dueño haya llegado al establecimiento con su mascota.</string>
+    <string name="visit_estheticist_created_start_button">Atender visita</string>
+
+    <string name="wish_to_logout">¿Deseas cerrar sesión?</string>
+
 </resources>

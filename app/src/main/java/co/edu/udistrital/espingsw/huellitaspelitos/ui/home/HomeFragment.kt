@@ -42,7 +42,7 @@ class HomeFragment : Fragment() {
         homeViewModel.pets.observe(viewLifecycleOwner) { petList ->
             val mViewPager = binding.viewPager
             val mViewPagerAdapter = context?.let { ViewPagerAdapter(it,
-                petList as ArrayList<PetDto>, navController) }
+                petList as ArrayList<PetDto>, navController, userId) }
             mViewPagerAdapter?.notifyDataSetChanged()
             mViewPager.adapter = mViewPagerAdapter
         }

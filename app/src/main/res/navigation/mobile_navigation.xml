@@ -9,7 +9,20 @@
         android:id="@+id/nav_home"
         android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_pet_grooming_services"
+            app:destination="@+id/nav_pet_grooming_services" />
+        <action
+            android:id="@+id/action_home_to_add_pet"
+            app:destination="@+id/nav_add_pets" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_aboutUs"
+        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.aboutus.AboutUsFragment"
+        android:label="@string/menu_aboutUs"
+        tools:layout="@layout/fragment_about_us" />
 
     <fragment
         android:id="@+id/nav_profile"
@@ -19,7 +32,92 @@
 
     <fragment
         android:id="@+id/nav_pets"
-        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.slideshow.SlideshowFragment"
+        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.pet.PetFragment"
         android:label="@string/menu_pets"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_pet_list">
+        <action
+            android:id="@+id/action_pet_list_to_add_pet"
+            app:destination="@+id/nav_add_pets" />
+        <action
+            android:id="@+id/action_pet_list_to_pet_details"
+            app:destination="@+id/nav_add_pets" />
+        <action
+            android:id="@+id/action_pet_list_to_confirm_delete"
+            app:destination="@+id/nav_confirm_delete_pets" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_services"
+        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.services.PetForServicesFragment"
+        android:label="@string/menu_services"
+        tools:layout="@layout/fragment_petforservices_list">
+        <action
+            android:id="@+id/action_services_petlist_to_services"
+            app:destination="@+id/nav_pet_grooming_services" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_contactUs"
+        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.contactus.ContactUsFragment"
+        android:label="@string/menu_contactUs"
+        tools:layout="@layout/fragment_contact_us">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.logout.LogoutFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_logout">
+        <action
+            android:id="@+id/action_logout_to_home"
+            app:destination="@+id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_pet_grooming_services"
+        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.petgroomingservices.ServicesFragment"
+        android:label="@string/menu_services"
+        tools:layout="@layout/fragment_services_list">
+
+        <action
+            android:id="@+id/action_services_to_notifications"
+            app:destination="@+id/nav_notification_options" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_notification_options"
+        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.notifications.NotificationOptionsFragment"
+        android:label="@string/notifications_title"
+        tools:layout="@layout/fragment_notification_options">
+        <action
+            android:id="@+id/action_notification_to_visit_created"
+            app:destination="@+id/nav_visit_created" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_visit_created"
+        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.visit.VisitCreatedFragment"
+        android:label="@string/visit_created_label"
+        tools:layout="@layout/fragment_visit_created">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_add_pets"
+        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.pet.AddPetFragment"
+        android:label="@string/create_pet"
+        tools:layout="@layout/fragment_add_pet">
+        <action
+            android:id="@+id/action_add_pet_to_home"
+            app:destination="@+id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_confirm_delete_pets"
+        android:name="co.edu.udistrital.espingsw.huellitaspelitos.ui.pet.ConfirmDeletePetFragment"
+        android:label="@string/pet_delete_pet_label"
+        tools:layout="@layout/fragment_confirm_delete_pet">
+        <action
+            android:id="@+id/action_confirm_delete_pets_to_home"
+            app:destination="@+id/nav_home" />
+    </fragment>
 </navigation>

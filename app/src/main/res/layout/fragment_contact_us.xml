@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.contactus.ContactUsFragment">
+
+    <ImageView
+        android:id="@+id/iv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logopeque"
+        android:contentDescription="TODO" />
+
+    <ImageView
+        android:id="@+id/iv_2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_1"
+        app:srcCompat="@drawable/instagram"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/txt_v2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/iv_2"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/iv_2"
+        app:layout_constraintTop_toBottomOf="@id/iv_1"
+        android:text="Instagram: @huellitaspelitos"
+        app:layout_constraintVertical_bias="0.73" />
+
+    <ImageView
+        android:id="@+id/iv_3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_2"
+        app:srcCompat="@drawable/facebook"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/txt_v3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/iv_3"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/iv_3"
+        app:layout_constraintTop_toBottomOf="@id/iv_2"
+        android:text="Facebook: https://www.facebook.com/08huellitas.pelitos"
+        app:layout_constraintVertical_bias="0.73" />
+
+    <ImageView
+        android:id="@+id/iv_4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_3"
+        app:srcCompat="@drawable/map_marker"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/txt_v4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/iv_4"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/iv_4"
+        app:layout_constraintTop_toBottomOf="@id/iv_3"
+        android:text="Calle 81 Sur # 10 - 40, Yomasa, Usme, Bogotá D.C, CO"
+        app:layout_constraintVertical_bias="0.73" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

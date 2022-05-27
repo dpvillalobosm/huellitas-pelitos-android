@@ -1,6 +1,6 @@
 package co.edu.udistrital.espingsw.huellitaspelitos.data.repository
 
-import co.edu.udistrital.espingsw.huellitaspelitos.data.util.Result
+import co.edu.udistrital.espingsw.huellitaspelitos.data.util.ApiCallResult
 import co.edu.udistrital.espingsw.huellitaspelitos.data.datasource.remote.LoginDataSource
 import co.edu.udistrital.espingsw.huellitaspelitos.data.restapi.dto.UserDto
 import javax.inject.Inject
@@ -30,11 +30,11 @@ class LoginRepository @Inject constructor(val dataSource: LoginDataSource) {
         dataSource.logout()
     }
 
-    suspend fun login(username: String, password: String): Result<UserDto> {
+    suspend fun login(username: String, password: String): ApiCallResult<UserDto> {
         // handle login
         val result = dataSource.login(username, password)
 
-        if (result is Result.Success) {
+        if (result is ApiCallResult.Success) {
             setLoggedInUser(result.data)
         }
 

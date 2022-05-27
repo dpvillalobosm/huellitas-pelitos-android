@@ -10,6 +10,11 @@
             android:title="@string/menu_home" />
 
         <item
+            android:id="@+id/nav_aboutUs"
+            android:icon="@drawable/office_building"
+            android:title="@string/menu_aboutUs" />
+
+        <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/baseline_account_circle_black_24"
             android:title="@string/menu_profile" />
@@ -23,6 +28,11 @@
             android:id="@+id/nav_services"
             android:icon="@drawable/baseline_shower_black_24"
             android:title="@string/menu_services" />
+
+        <item
+            android:id="@+id/nav_contactUs"
+            android:icon="@drawable/email"
+            android:title="@string/menu_contactUs" />
 
         <item
             android:id="@+id/nav_logout"

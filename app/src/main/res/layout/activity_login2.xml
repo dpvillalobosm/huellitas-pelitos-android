@@ -12,7 +12,7 @@
     tools:context=".ui.login.LoginActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/img_logo_header"
         android:layout_width="351dp"
         android:layout_height="140dp"
         android:layout_centerInParent="true"
@@ -27,7 +27,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="176dp"
-        android:hint="@string/prompt_email"
+        android:hint="@string/prompt_login"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"

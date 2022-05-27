@@ -12,7 +12,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
 import co.edu.udistrital.espingsw.huellitaspelitos.R
+import co.edu.udistrital.espingsw.huellitaspelitos.data.util.Constants
 import co.edu.udistrital.espingsw.huellitaspelitos.databinding.ActivityMainBinding
 import co.edu.udistrital.espingsw.huellitaspelitos.ui.login.LoggedInUserView
 import co.edu.udistrital.espingsw.huellitaspelitos.ui.login.LoginActivity
@@ -23,6 +26,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController: NavController
+    private lateinit var mainActivityViewModel: MainViewModel
 
     private var loggedInUserView: LoggedInUserView? = null
 
@@ -34,16 +39,17 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        mainActivityViewModel = ViewModelProvider(this)[MainViewModel::class.java]
+
         setSupportActionBar(binding.appBarMain.toolbar)
         //El botón para registrar nuevas mascotas al iniciar sesión
-        binding.appBarMain.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        binding.appBarMain.fab.setOnClickListener {
+            goToCreatePet()
         }
         //Lo necesario para configurar el menú principal
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+        navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -61,8 +67,14 @@ class MainActivity : AppCompatActivity() {
         userHeaderTextView.text = loggedInUserView?.login
         usermailHeaderTextView.text = loggedInUserView?.email
 
-        //Poner el ID del usuario en el SharedPreferences para que quede disponible en toooda la app
+        loggedInUserView?.id?.let { mainActivityViewModel.setUserId(it) }
+    }
 
+    fun goToCreatePet(){
+        binding.appBarMain.fab.hide()
+        val bundle = Bundle()
+        loggedInUserView?.id?.let { bundle.putInt(Constants.USER_ID, it) }
+        navController.navigate(R.id.action_home_to_add_pet, bundle)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -72,7 +84,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSupportNavigateUp(): Boolean {
+        binding.appBarMain.fab.hide()
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+    override fun onNavigateUp(): Boolean {
+        binding.appBarMain.fab.hide()
+        return super.onNavigateUp()
+    }
+
 }
